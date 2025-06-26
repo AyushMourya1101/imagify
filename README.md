@@ -39,9 +39,5 @@ cd ../frontend && npm install && npm start
 
 
 
-📩 Contact
-
-For inquiries, reach out at ayush98725@gmail.com.
-
 Would you like me to add anything else?
 
