@@ -61,21 +61,7 @@ const BuyCredit = () => {
     }
   }
 
-  const paymentStripe = async (planId) => {
-    try {
-
-      const { data } = await axios.post(backendUrl + '/api/user/pay-stripe', { planId }, { headers: { token } })
-      if (data.success) {
-        const { session_url } = data
-        window.location.replace(session_url)
-      } else {
-        toast.error(data.message)
-      }
-    } catch (error) {
-      console.log(error)
-      toast.error(error.message)
-    }
-  }
+  
 
   return (
     <motion.div className='min-h-[80vh] text-center pt-14 mb-10'
@@ -99,9 +85,6 @@ const BuyCredit = () => {
               <button onClick={() => paymentRazorpay(item.id)} className='w-full flex justify-center gap-2 border border-gray-400 mt-2 text-sm rounded-md py-2.5 min-w-52 hover:bg-blue-50 hover:border-blue-400'>
                 <img className='h-4' src={assets.razorpay_logo} alt="" />
               </button>
-              {/* <button onClick={() => paymentStripe(item.id)} className='w-full flex justify-center gap-2 border border-gray-400 mt-2 text-sm rounded-md py-2.5 min-w-52 hover:bg-blue-50 hover:border-blue-400'>
-                <img className='h-4' src={assets.stripe_logo} alt="" />
-              </button> */}
             </div>
           </div>
         ))}
