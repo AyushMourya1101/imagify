@@ -12,7 +12,7 @@ await connectDB()
 
 // Intialize Middlewares
 app.use(express.json())
-app.use(cors())
+app.use(cors());
 
 // API routes
 app.use('/api/user',userRouter)
@@ -20,4 +20,4 @@ app.use('/api/image',imageRouter)
 
 app.get('/', (req,res) => res.send("API Working"))
 
-app.listen(PORT, () => console.log('Server running on port ' + PORT));
+app.listen(PORT, () => console.log('Server running on port ' + PORT ));
